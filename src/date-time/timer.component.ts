@@ -102,6 +102,13 @@ export class OwlTimerComponent<T> implements OnInit {
      * */
     @Input() stepSecond = 1;
 
+    /**
+     * Disables Minute
+     * @default {1}
+     * @type {boolean}
+     * */
+    @Input() disableMinute = false;
+
     get hourValue(): number {
         return this.dateTimeAdapter.getHours(this.pickerMoment);
     }

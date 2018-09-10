@@ -9,6 +9,9 @@
         (inputChange)="setHourValueViaInput($event)"
         (valueChange)="setHourValue($event)"></owl-date-time-timer-box>
 <owl-date-time-timer-box
+        [disable]="disableMinute"
+        [upBtnHidden]="disableMinute"
+        [downBtnHidden]="disableMinute"
         [showDivider]="true"
         [upBtnAriaLabel]="upMinuteButtonLabel"
         [downBtnAriaLabel]="downMinuteButtonLabel"

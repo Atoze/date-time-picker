@@ -26,6 +26,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 
 export class OwlTimerBoxComponent implements OnInit, OnDestroy {
+    @Input() disabled = false;
 
     @Input() showDivider = false;
 
@@ -33,9 +34,13 @@ export class OwlTimerBoxComponent implements OnInit, OnDestroy {
 
     @Input() upBtnDisabled: boolean;
 
+    @Input() upBtnHidden: boolean;
+
     @Input() downBtnAriaLabel: string;
 
     @Input() downBtnDisabled: boolean;
+
+    @Input() downBtnHidden: boolean;
 
     /**
      * Value would be displayed in the box

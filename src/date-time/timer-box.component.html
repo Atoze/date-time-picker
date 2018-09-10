@@ -1,6 +1,7 @@
 <div *ngIf="showDivider" class="owl-dt-timer-divider" aria-hidden="true"></div>
 <button class="owl-dt-control-button owl-dt-control-arrow-button"
         type="button" tabindex="-1"
+        *ngIf="!upBtnHidden"
         [disabled]="upBtnDisabled"
         [attr.aria-label]="upBtnAriaLabel"
         (click)="upBtnClicked()">
@@ -20,11 +21,13 @@
 <label class="owl-dt-timer-content">
     <input class="owl-dt-timer-input" maxlength="2"
            [value]="displayValue | numberFixedLen : 2"
+           [disabled]="disabled"
            (input)="handleInputChange(valueInput.value)" #valueInput>
     <span class="owl-hidden-accessible">{{inputLabel}}</span>
 </label>
 <button class="owl-dt-control-button owl-dt-control-arrow-button"
         type="button" tabindex="-1"
+        *ngIf="!downBtnHidden"
         [disabled]="downBtnDisabled"
         [attr.aria-label]="downBtnAriaLabel"
         (click)="downBtnClicked()">
